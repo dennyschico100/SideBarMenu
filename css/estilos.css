@@ -66,13 +66,102 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
+header{
+  height: 100vh;
+  z-index: 100%;
+  
+}
+
+
+
+.loading{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left:30%;
+  opacity: 1;
+  top: 30%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 10px solid #e74c3c;
+  
+  animation : load 2s linear infinite;
+
+}
+
+.loading::before, .loading::after{
+
+  content: '';
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: -10px; 
+  box-sizing: border-box;
+  border-radius: 50%;
+
+}
+
+.loading::after{
+  border-top: 10px solid #e67e22;
+  transform: rotate(120deg);
+  
+}
+
+.loading::before{
+  border-top: 10px solid #3489db;
+  transform: rotate(240deg)
+  
+}
+
+
+.loading span{
+  position: absolute;
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  animation : load2 2s linear  infinite;
+  
+}
+
+@keyframes load{
+  to{
+      transform: rotate(360deg);
+
+  }
+}
+
+@keyframes load2{
+  to{
+      transform: rotate(-360deg);
+      
+  }
+}
+
 body {
   font-family: var(--ff-secondary);
   background: var(--clr-grey-10);
+  
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ul {
   list-style-type: none;
 }
